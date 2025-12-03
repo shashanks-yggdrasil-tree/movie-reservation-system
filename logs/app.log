@@ -1,0 +1,154 @@
+2025-12-03T19:34:03.902+05:30  INFO 28824 --- [movie-reservation-system] [main] c.t.m.MovieReservationSystemApplication  : Starting MovieReservationSystemApplication using Java 24.0.2 with PID 28824 (D:\java\roadmap_sh_projects\movie-reservation-system\target\classes started by shash in D:\java\roadmap_sh_projects\movie-reservation-system)
+2025-12-03T19:34:03.906+05:30  INFO 28824 --- [movie-reservation-system] [main] c.t.m.MovieReservationSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-12-03T19:34:04.490+05:30  INFO 28824 --- [movie-reservation-system] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2025-12-03T19:34:04.501+05:30  INFO 28824 --- [movie-reservation-system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-03T19:34:04.501+05:30  INFO 28824 --- [movie-reservation-system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.14]
+2025-12-03T19:34:04.533+05:30  INFO 28824 --- [movie-reservation-system] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 581 ms
+2025-12-03T19:34:04.793+05:30  INFO 28824 --- [movie-reservation-system] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2025-12-03T19:34:04.797+05:30  INFO 28824 --- [movie-reservation-system] [main] c.t.m.MovieReservationSystemApplication  : Started MovieReservationSystemApplication in 1.286 seconds (process running for 1.874)
+2025-12-03T19:34:39.839+05:30  INFO 28824 --- [movie-reservation-system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-03T19:34:39.840+05:30  INFO 28824 --- [movie-reservation-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-03T19:34:39.841+05:30  INFO 28824 --- [movie-reservation-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-12-03T19:37:21.536+05:30  INFO 28824 --- [movie-reservation-system] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-03T19:37:21.540+05:30  INFO 28824 --- [movie-reservation-system] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2025-12-03T19:37:25.657+05:30  INFO 37092 --- [movie-reservation-system] [main] c.t.m.MovieReservationSystemApplication  : Starting MovieReservationSystemApplication using Java 24.0.2 with PID 37092 (D:\java\roadmap_sh_projects\movie-reservation-system\target\classes started by shash in D:\java\roadmap_sh_projects\movie-reservation-system)
+2025-12-03T19:37:25.660+05:30  INFO 37092 --- [movie-reservation-system] [main] c.t.m.MovieReservationSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-12-03T19:37:26.256+05:30  INFO 37092 --- [movie-reservation-system] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2025-12-03T19:37:26.266+05:30  INFO 37092 --- [movie-reservation-system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-03T19:37:26.267+05:30  INFO 37092 --- [movie-reservation-system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.14]
+2025-12-03T19:37:26.298+05:30  INFO 37092 --- [movie-reservation-system] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 588 ms
+2025-12-03T19:37:26.539+05:30  INFO 37092 --- [movie-reservation-system] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2025-12-03T19:37:26.542+05:30  INFO 37092 --- [movie-reservation-system] [main] c.t.m.MovieReservationSystemApplication  : Started MovieReservationSystemApplication in 1.262 seconds (process running for 1.929)
+2025-12-03T19:38:28.294+05:30  INFO 37092 --- [movie-reservation-system] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-03T19:38:28.308+05:30  INFO 37092 --- [movie-reservation-system] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2025-12-03T19:38:31.591+05:30  INFO 44940 --- [movie-reservation-system] [main] c.t.m.MovieReservationSystemApplication  : Starting MovieReservationSystemApplication using Java 24.0.2 with PID 44940 (D:\java\roadmap_sh_projects\movie-reservation-system\target\classes started by shash in D:\java\roadmap_sh_projects\movie-reservation-system)
+2025-12-03T19:38:31.594+05:30  INFO 44940 --- [movie-reservation-system] [main] c.t.m.MovieReservationSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-12-03T19:38:32.276+05:30  INFO 44940 --- [movie-reservation-system] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2025-12-03T19:38:32.292+05:30  INFO 44940 --- [movie-reservation-system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-03T19:38:32.293+05:30  INFO 44940 --- [movie-reservation-system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.14]
+2025-12-03T19:38:32.326+05:30  INFO 44940 --- [movie-reservation-system] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 687 ms
+2025-12-03T19:38:32.576+05:30  INFO 44940 --- [movie-reservation-system] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2025-12-03T19:38:32.580+05:30  INFO 44940 --- [movie-reservation-system] [main] c.t.m.MovieReservationSystemApplication  : Started MovieReservationSystemApplication in 1.384 seconds (process running for 1.953)
+2025-12-03T19:38:41.148+05:30  INFO 44940 --- [movie-reservation-system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-03T19:38:41.148+05:30  INFO 44940 --- [movie-reservation-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-03T19:38:41.150+05:30  INFO 44940 --- [movie-reservation-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-12-03T19:43:03.623+05:30  INFO 44940 --- [movie-reservation-system] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-03T19:43:03.628+05:30  INFO 44940 --- [movie-reservation-system] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2025-12-03T19:43:08.585+05:30  INFO 12208 --- [movie-reservation-system] [main] c.t.m.MovieReservationSystemApplication  : Starting MovieReservationSystemApplication using Java 24.0.2 with PID 12208 (D:\java\roadmap_sh_projects\movie-reservation-system\target\classes started by shash in D:\java\roadmap_sh_projects\movie-reservation-system)
+2025-12-03T19:43:08.594+05:30  INFO 12208 --- [movie-reservation-system] [main] c.t.m.MovieReservationSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-12-03T19:43:09.425+05:30  INFO 12208 --- [movie-reservation-system] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2025-12-03T19:43:09.460+05:30  INFO 12208 --- [movie-reservation-system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-03T19:43:09.460+05:30  INFO 12208 --- [movie-reservation-system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.14]
+2025-12-03T19:43:09.518+05:30  INFO 12208 --- [movie-reservation-system] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 871 ms
+2025-12-03T19:43:09.937+05:30  INFO 12208 --- [movie-reservation-system] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2025-12-03T19:43:09.944+05:30  INFO 12208 --- [movie-reservation-system] [main] c.t.m.MovieReservationSystemApplication  : Started MovieReservationSystemApplication in 2.055 seconds (process running for 2.893)
+2025-12-03T19:43:11.694+05:30  INFO 12208 --- [movie-reservation-system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-03T19:43:11.695+05:30  INFO 12208 --- [movie-reservation-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-03T19:43:11.696+05:30  INFO 12208 --- [movie-reservation-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-12-03T19:45:13.636+05:30  INFO 12208 --- [movie-reservation-system] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-03T19:45:13.644+05:30  INFO 12208 --- [movie-reservation-system] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2025-12-03T19:45:18.637+05:30  INFO 28248 --- [movie-reservation-system] [main] c.t.m.MovieReservationSystemApplication  : Starting MovieReservationSystemApplication using Java 24.0.2 with PID 28248 (D:\java\roadmap_sh_projects\movie-reservation-system\target\classes started by shash in D:\java\roadmap_sh_projects\movie-reservation-system)
+2025-12-03T19:45:18.640+05:30  INFO 28248 --- [movie-reservation-system] [main] c.t.m.MovieReservationSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-12-03T19:45:19.866+05:30  INFO 28248 --- [movie-reservation-system] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2025-12-03T19:45:19.879+05:30  INFO 28248 --- [movie-reservation-system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-03T19:45:19.879+05:30  INFO 28248 --- [movie-reservation-system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.14]
+2025-12-03T19:45:19.920+05:30  INFO 28248 --- [movie-reservation-system] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1200 ms
+2025-12-03T19:45:20.309+05:30  INFO 28248 --- [movie-reservation-system] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2025-12-03T19:45:20.315+05:30  INFO 28248 --- [movie-reservation-system] [main] c.t.m.MovieReservationSystemApplication  : Started MovieReservationSystemApplication in 2.286 seconds (process running for 3.118)
+2025-12-03T19:46:41.278+05:30  INFO 28248 --- [movie-reservation-system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-03T19:46:41.280+05:30  INFO 28248 --- [movie-reservation-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-03T19:46:41.281+05:30  INFO 28248 --- [movie-reservation-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-12-03T19:47:06.046+05:30  INFO 28248 --- [movie-reservation-system] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-03T19:47:06.053+05:30  INFO 28248 --- [movie-reservation-system] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2025-12-03T19:47:09.334+05:30  INFO 31280 --- [movie-reservation-system] [main] c.t.m.MovieReservationSystemApplication  : Starting MovieReservationSystemApplication using Java 24.0.2 with PID 31280 (D:\java\roadmap_sh_projects\movie-reservation-system\target\classes started by shash in D:\java\roadmap_sh_projects\movie-reservation-system)
+2025-12-03T19:47:09.337+05:30  INFO 31280 --- [movie-reservation-system] [main] c.t.m.MovieReservationSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-12-03T19:47:09.969+05:30  INFO 31280 --- [movie-reservation-system] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2025-12-03T19:47:09.979+05:30  INFO 31280 --- [movie-reservation-system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-03T19:47:09.979+05:30  INFO 31280 --- [movie-reservation-system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.14]
+2025-12-03T19:47:10.009+05:30  INFO 31280 --- [movie-reservation-system] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 628 ms
+2025-12-03T19:47:10.275+05:30  INFO 31280 --- [movie-reservation-system] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2025-12-03T19:47:10.279+05:30  INFO 31280 --- [movie-reservation-system] [main] c.t.m.MovieReservationSystemApplication  : Started MovieReservationSystemApplication in 1.392 seconds (process running for 1.953)
+2025-12-03T19:47:12.372+05:30  INFO 31280 --- [movie-reservation-system] [http-nio-8080-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-03T19:47:12.373+05:30  INFO 31280 --- [movie-reservation-system] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-03T19:47:12.375+05:30  INFO 31280 --- [movie-reservation-system] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-12-03T19:47:27.172+05:30  INFO 31280 --- [movie-reservation-system] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-03T19:47:27.178+05:30  INFO 31280 --- [movie-reservation-system] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2025-12-03T19:47:33.143+05:30  INFO 7356 --- [movie-reservation-system] [main] c.t.m.MovieReservationSystemApplication  : Starting MovieReservationSystemApplication using Java 24.0.2 with PID 7356 (D:\java\roadmap_sh_projects\movie-reservation-system\target\classes started by shash in D:\java\roadmap_sh_projects\movie-reservation-system)
+2025-12-03T19:47:33.146+05:30  INFO 7356 --- [movie-reservation-system] [main] c.t.m.MovieReservationSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-12-03T19:47:34.130+05:30  INFO 7356 --- [movie-reservation-system] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2025-12-03T19:47:34.141+05:30  INFO 7356 --- [movie-reservation-system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-03T19:47:34.141+05:30  INFO 7356 --- [movie-reservation-system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.14]
+2025-12-03T19:47:34.180+05:30  INFO 7356 --- [movie-reservation-system] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 977 ms
+2025-12-03T19:47:34.680+05:30  INFO 7356 --- [movie-reservation-system] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2025-12-03T19:47:34.685+05:30  INFO 7356 --- [movie-reservation-system] [main] c.t.m.MovieReservationSystemApplication  : Started MovieReservationSystemApplication in 2.364 seconds (process running for 3.493)
+2025-12-03T19:47:34.790+05:30  INFO 7356 --- [movie-reservation-system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-03T19:47:34.792+05:30  INFO 7356 --- [movie-reservation-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-03T19:47:34.792+05:30  INFO 7356 --- [movie-reservation-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-12-03T19:47:34.817+05:30 ERROR 7356 --- [movie-reservation-system] [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.IllegalArgumentException: When allowCredentials is true, allowedOrigins cannot contain the special value "*" since that cannot be set on the "Access-Control-Allow-Origin" response header. To allow credentials to a set of origins, list them explicitly or consider using "allowedOriginPatterns" instead.] with root cause
+
+java.lang.IllegalArgumentException: When allowCredentials is true, allowedOrigins cannot contain the special value "*" since that cannot be set on the "Access-Control-Allow-Origin" response header. To allow credentials to a set of origins, list them explicitly or consider using "allowedOriginPatterns" instead.
+	at org.springframework.web.cors.CorsConfiguration.validateAllowCredentials(CorsConfiguration.java:552) ~[spring-web-7.0.1.jar:7.0.1]
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:578) ~[spring-webmvc-7.0.1.jar:7.0.1]
+	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1157) ~[spring-webmvc-7.0.1.jar:7.0.1]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:951) ~[spring-webmvc-7.0.1.jar:7.0.1]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866) ~[spring-webmvc-7.0.1.jar:7.0.1]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1003) ~[spring-webmvc-7.0.1.jar:7.0.1]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:892) ~[spring-webmvc-7.0.1.jar:7.0.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622) ~[tomcat-embed-core-11.0.14.jar:6.1]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874) ~[spring-webmvc-7.0.1.jar:7.0.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710) ~[tomcat-embed-core-11.0.14.jar:6.1]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128) ~[tomcat-embed-core-11.0.14.jar:11.0.14]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-11.0.14.jar:11.0.14]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.14.jar:11.0.14]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-7.0.1.jar:7.0.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.1.jar:7.0.1]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.14.jar:11.0.14]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-7.0.1.jar:7.0.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.1.jar:7.0.1]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.14.jar:11.0.14]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199) ~[spring-web-7.0.1.jar:7.0.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.1.jar:7.0.1]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.14.jar:11.0.14]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-11.0.14.jar:11.0.14]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77) ~[tomcat-embed-core-11.0.14.jar:11.0.14]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-11.0.14.jar:11.0.14]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113) ~[tomcat-embed-core-11.0.14.jar:11.0.14]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83) ~[tomcat-embed-core-11.0.14.jar:11.0.14]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72) ~[tomcat-embed-core-11.0.14.jar:11.0.14]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341) ~[tomcat-embed-core-11.0.14.jar:11.0.14]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-11.0.14.jar:11.0.14]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-11.0.14.jar:11.0.14]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-11.0.14.jar:11.0.14]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1778) ~[tomcat-embed-core-11.0.14.jar:11.0.14]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-11.0.14.jar:11.0.14]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946) ~[tomcat-embed-core-11.0.14.jar:11.0.14]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480) ~[tomcat-embed-core-11.0.14.jar:11.0.14]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57) ~[tomcat-embed-core-11.0.14.jar:11.0.14]
+	at java.base/java.lang.Thread.run(Thread.java:1447) ~[na:na]
+
+2025-12-03T19:48:30.461+05:30  INFO 7356 --- [movie-reservation-system] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-03T19:48:30.472+05:30  INFO 7356 --- [movie-reservation-system] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2025-12-03T19:48:34.082+05:30  INFO 44592 --- [movie-reservation-system] [main] c.t.m.MovieReservationSystemApplication  : Starting MovieReservationSystemApplication using Java 24.0.2 with PID 44592 (D:\java\roadmap_sh_projects\movie-reservation-system\target\classes started by shash in D:\java\roadmap_sh_projects\movie-reservation-system)
+2025-12-03T19:48:34.087+05:30  INFO 44592 --- [movie-reservation-system] [main] c.t.m.MovieReservationSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-12-03T19:48:34.813+05:30  INFO 44592 --- [movie-reservation-system] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2025-12-03T19:48:34.823+05:30  INFO 44592 --- [movie-reservation-system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-03T19:48:34.825+05:30  INFO 44592 --- [movie-reservation-system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.14]
+2025-12-03T19:48:34.868+05:30  INFO 44592 --- [movie-reservation-system] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 731 ms
+2025-12-03T19:48:35.275+05:30  INFO 44592 --- [movie-reservation-system] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2025-12-03T19:48:35.275+05:30  INFO 44592 --- [movie-reservation-system] [main] c.t.m.MovieReservationSystemApplication  : Started MovieReservationSystemApplication in 1.612 seconds (process running for 2.28)
+2025-12-03T19:48:39.101+05:30  INFO 44592 --- [movie-reservation-system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-03T19:48:39.102+05:30  INFO 44592 --- [movie-reservation-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-03T19:48:39.103+05:30  INFO 44592 --- [movie-reservation-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-12-03T19:49:15.415+05:30  INFO 44592 --- [movie-reservation-system] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-03T19:49:15.425+05:30  INFO 44592 --- [movie-reservation-system] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2025-12-03T19:49:18.846+05:30  INFO 40124 --- [movie-reservation-system] [main] c.t.m.MovieReservationSystemApplication  : Starting MovieReservationSystemApplication using Java 24.0.2 with PID 40124 (D:\java\roadmap_sh_projects\movie-reservation-system\target\classes started by shash in D:\java\roadmap_sh_projects\movie-reservation-system)
+2025-12-03T19:49:18.849+05:30  INFO 40124 --- [movie-reservation-system] [main] c.t.m.MovieReservationSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-12-03T19:49:19.520+05:30  INFO 40124 --- [movie-reservation-system] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2025-12-03T19:49:19.530+05:30  INFO 40124 --- [movie-reservation-system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-03T19:49:19.530+05:30  INFO 40124 --- [movie-reservation-system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.14]
+2025-12-03T19:49:19.558+05:30  INFO 40124 --- [movie-reservation-system] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 654 ms
+2025-12-03T19:49:19.831+05:30  INFO 40124 --- [movie-reservation-system] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2025-12-03T19:49:19.836+05:30  INFO 40124 --- [movie-reservation-system] [main] c.t.m.MovieReservationSystemApplication  : Started MovieReservationSystemApplication in 1.37 seconds (process running for 2.132)
+2025-12-03T19:49:25.198+05:30  INFO 40124 --- [movie-reservation-system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-03T19:49:25.200+05:30  INFO 40124 --- [movie-reservation-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-03T19:49:25.201+05:30  INFO 40124 --- [movie-reservation-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
