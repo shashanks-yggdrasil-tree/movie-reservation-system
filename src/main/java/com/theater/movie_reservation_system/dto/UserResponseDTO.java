@@ -5,30 +5,39 @@ import java.time.LocalDateTime;
 public class UserResponseDTO {
 	
 	private Long id;
+	private String phoneNumber;
 	private String email;
-	private String fullName;
-	private String phone;
+	private String firstName;
+	private String lastName;
 	private LocalDateTime createdAt;
 	
 	// Default constructor
 	public UserResponseDTO() {}
 	
 	// Parameterized constructor
-	public UserResponseDTO(Long id, String email, String fullName, String phone, LocalDateTime createdAt) {
+	public UserResponseDTO(Long id, String phoneNumber, String email, String firstName, String lastName, LocalDateTime createdAt) {
 		this.id = id;
 		this.email = email;
-		this.fullName = fullName;
-		this.phone = phone;
+		this.phoneNumber = phoneNumber;
+		this.firstName = firstName;
+		this.lastName = lastName;
 		this.createdAt = createdAt;
 	}
 	
-	// Getters and Setters
 	public Long getId() {
 		return id;
 	}
 	
 	public void setId(Long id) {
 		this.id = id;
+	}
+	
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+	
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
 	
 	public String getEmail() {
@@ -39,20 +48,20 @@ public class UserResponseDTO {
 		this.email = email;
 	}
 	
-	public String getFullName() {
-		return fullName;
+	public String getFirstName() {
+		return firstName;
 	}
 	
-	public void setFullName(String fullName) {
-		this.fullName = fullName;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 	
-	public String getPhone() {
-		return phone;
+	public String getLastName() {
+		return lastName;
 	}
 	
-	public void setPhone(String phone) {
-		this.phone = phone;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 	
 	public LocalDateTime getCreatedAt() {
@@ -67,9 +76,10 @@ public class UserResponseDTO {
 	public String toString() {
 		return "UserResponseDTO{" +
 				"id=" + id +
+				", phoneNumber='" + phoneNumber + '\'' +
 				", email='" + email + '\'' +
-				", fullName='" + fullName + '\'' +
-				", phone='" + phone + '\'' +
+				", firstName='" + firstName + '\'' +
+				", lastName='" + lastName + '\'' +
 				", createdAt=" + createdAt +
 				'}';
 	}

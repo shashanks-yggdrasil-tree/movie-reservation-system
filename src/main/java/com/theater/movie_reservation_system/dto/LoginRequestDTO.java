@@ -2,12 +2,18 @@ package com.theater.movie_reservation_system.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+import lombok.Getter;
+import lombok.Setter;
 
+@Setter
+@Getter
 public class LoginRequestDTO {
 	
-	@NotBlank(message = "Email is required")
-	@Email(message = "Invalid email format")
-	private String email;
+	// Getters and Setters
+	@NotBlank(message = "Phone number is required")
+	@Pattern(regexp = "^[0-9]{10}$", message = "Phone number must be 10 digits")
+	private String phoneNumber;
 	
 	@NotBlank(message = "Password is required")
 	private String password;
@@ -16,32 +22,15 @@ public class LoginRequestDTO {
 	public LoginRequestDTO() {}
 	
 	// Parameterized constructor
-	public LoginRequestDTO(String email, String password) {
-		this.email = email;
-		this.password = password;
-	}
-	
-	// Getters and Setters
-	public String getEmail() {
-		return email;
-	}
-	
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	
-	public String getPassword() {
-		return password;
-	}
-	
-	public void setPassword(String password) {
+	public LoginRequestDTO(String phoneNumber, String password) {
+		this.phoneNumber = phoneNumber;
 		this.password = password;
 	}
 	
 	@Override
 	public String toString() {
 		return "LoginRequestDTO{" +
-				"email='" + email + '\'' +
+				"phoneNumber='" + phoneNumber + '\'' +
 				'}';
 	}
 }
