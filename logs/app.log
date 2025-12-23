@@ -1,2 +1,5 @@
-2025-12-05T02:19:57.258+05:30  WARN 30364 --- [movie-reservation-system] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h51m4s736ms965µs400ns).
-2025-12-05T06:02:28.616+05:30  WARN 30364 --- [movie-reservation-system] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3h39m31s219ms249µs500ns).
+2025-12-23T00:46:24.186+05:30  INFO 23996 --- [movie-reservation-system] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-23T00:46:24.244+05:30  INFO 23996 --- [movie-reservation-system] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2025-12-23T00:46:24.265+05:30  INFO 23996 --- [movie-reservation-system] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-23T00:46:24.290+05:30  INFO 23996 --- [movie-reservation-system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-23T00:46:24.298+05:30  INFO 23996 --- [movie-reservation-system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
