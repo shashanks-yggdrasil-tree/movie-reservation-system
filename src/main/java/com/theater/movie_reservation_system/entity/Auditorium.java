@@ -21,7 +21,7 @@ public class Auditorium {
 	
 	// ===== FIRST FOREIGN KEY =====
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "theater_id", nullable = false)
+	@JoinColumn(name = "theater_id", nullable = false) // theater_id refers to theater.id somehow
 	private Theater theater;
 	// Auditorium BELONGS TO a Theater (ManyToOne)
 	

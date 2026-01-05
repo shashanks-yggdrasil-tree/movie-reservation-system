@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController()
-@RequestMapping("/api/test/movies") // We'll use a different path for final API
+@RequestMapping("/api/v1/test/movies") // We'll use a different path for final API
 public class TestMovieController {
 	
 	private final MovieService movieService;

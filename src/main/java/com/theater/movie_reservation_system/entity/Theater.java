@@ -1,10 +1,15 @@
 package com.theater.movie_reservation_system.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
+@Setter
+@Getter
 @Entity
+@Table(name = "theaters")
 public class Theater {
 	
 	@Id
@@ -20,10 +25,7 @@ public class Theater {
 	@Column(name = "address_line_2")
 	private String addressLine2;
 	
-	@Column
 	private String city;
-	
-	@Column
 	private String state;
 	
 	@Column(name = "zip_code")
@@ -77,102 +79,6 @@ public class Theater {
 	@PreUpdate
 	protected void onUpdate() {
 		this.updatedAt = LocalDateTime.now();
-	}
-	
-	public Long getId() {
-		return id;
-	}
-	
-	public void setId(Long id) {
-		this.id = id;
-	}
-	
-	public String getTheaterName() {
-		return theaterName;
-	}
-	
-	public void setTheaterName(String theaterName) {
-		this.theaterName = theaterName;
-	}
-	
-	public String getAddressLine1() {
-		return addressLine1;
-	}
-	
-	public void setAddressLine1(String addressLine1) {
-		this.addressLine1 = addressLine1;
-	}
-	
-	public String getAddressLine2() {
-		return addressLine2;
-	}
-	
-	public void setAddressLine2(String addressLine2) {
-		this.addressLine2 = addressLine2;
-	}
-	
-	public String getCity() {
-		return city;
-	}
-	
-	public void setCity(String city) {
-		this.city = city;
-	}
-	
-	public String getState() {
-		return state;
-	}
-	
-	public void setState(String state) {
-		this.state = state;
-	}
-	
-	public String getZipCode() {
-		return zipCode;
-	}
-	
-	public void setZipCode(String zipCode) {
-		this.zipCode = zipCode;
-	}
-	
-	public String getPhoneNumber() {
-		return phoneNumber;
-	}
-	
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
-	}
-	
-	public String getEmail() {
-		return email;
-	}
-	
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	
-	public Integer getTotalScreens() {
-		return totalScreens;
-	}
-	
-	public void setTotalScreens(Integer totalScreens) {
-		this.totalScreens = totalScreens;
-	}
-	
-	public LocalDateTime getCreatedAt() {
-		return createdAt;
-	}
-	
-	public void setCreatedAt(LocalDateTime createdAt) {
-		this.createdAt = createdAt;
-	}
-	
-	public LocalDateTime getUpdatedAt() {
-		return updatedAt;
-	}
-	
-	public void setUpdatedAt(LocalDateTime updatedAt) {
-		this.updatedAt = updatedAt;
 	}
 	
 	@Override
