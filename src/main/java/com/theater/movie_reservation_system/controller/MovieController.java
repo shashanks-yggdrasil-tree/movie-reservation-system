@@ -8,17 +8,16 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController()
-@RequestMapping("/api/v1/test/movies") // We'll use a different path for final API
-public class TestMovieController {
+@RequestMapping("/api/v1/movies") // We'll use a different path for final API
+public class MovieController {
 	
 	private final MovieService movieService;
 	
 	// Constructor Injection
-	public TestMovieController(MovieService movieService) {
+	public MovieController(MovieService movieService) {
 		this.movieService = movieService;
 	}
 	

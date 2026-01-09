@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/test/auditoriums")
-public class TestAuditoriumController {
+@RequestMapping("/api/v1/auditoriums")
+public class AuditoriumController {
 	
 	private final AuditoriumService auditoriumService;
 	
-	public TestAuditoriumController(AuditoriumService auditoriumService) {
+	public AuditoriumController(AuditoriumService auditoriumService) {
 		this.auditoriumService = auditoriumService;
 	}
 	
@@ -21,7 +21,8 @@ public class TestAuditoriumController {
 	public ResponseEntity<Auditorium> createAuditorium(
 			@RequestParam Long theaterId,
 			@RequestParam String name,
-			@RequestParam Integer capacity) {
+			@RequestParam Integer capacity
+	) {
 		
 		Auditorium auditorium = auditoriumService.createAuditorium(theaterId, name, capacity);
 		return ResponseEntity.ok(auditorium);

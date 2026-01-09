@@ -48,7 +48,7 @@ public class UserController {
 	}
 	
 	// POST /api/users/login
-	@PostMapping("login")
+	@PostMapping("/login")
 	public ResponseEntity<?> login(@Valid
 	                               @RequestBody
 	                               LoginRequestDTO loginRequest
@@ -75,7 +75,7 @@ public class UserController {
 	}
 	
 	
-	// GET /api/users/{id} - Optional: Get user by ID
+	// GET /api/v1/users/{id} - Optional: Get user by ID
 	@GetMapping("/{id}")
 	public ResponseEntity<?> getUserById(@PathVariable Long id) {
 		

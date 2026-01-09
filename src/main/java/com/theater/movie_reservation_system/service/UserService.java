@@ -25,7 +25,7 @@ public class UserService {
 		User user = new User();
 		user.setPhoneNumber(signUpRequest.getPhoneNumber());
 		user.setEmail(signUpRequest.getEmail());
-		user.setPassword(signUpRequest.getPassword()); // In real app, encrypt this!
+		user.setPassword(signUpRequest.getPassword()); // will encrypt this in futureA
 		user.setFirstName(signUpRequest.getFirstName());
 		user.setLastName(signUpRequest.getLastName());
 		
@@ -42,7 +42,7 @@ public class UserService {
 		User user = userRepository.findUserByPhoneNumber(loginRequest.getPhoneNumber())
 				.orElseThrow(() -> new IllegalArgumentException("Invalid phone number or password"));
 		
-		// Check password (plain text for now - we'll add encryption later)
+		// Check password (plain text for now - We'll add encryption in future)
 		if (!user.getPassword().equals(loginRequest.getPassword())) {
 			throw new IllegalArgumentException("Invalid password");
 		}
