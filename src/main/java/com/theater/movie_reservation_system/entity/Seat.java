@@ -28,7 +28,7 @@ public class Seat {
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "auditorium_id", nullable = false)
-// I think it does not make sense to add unique or nullable properties to a foreign key, any ways I am adding it
+// adding unique to a foreign key breaks that foreign key.
 	private Auditorium auditorium;
 	
 	@Column(name = "row_label", length = 1, nullable = false)
@@ -37,6 +37,14 @@ public class Seat {
 	@Column(name = "seat_number", nullable = false)
 	private int seatNumber;
 	
+	@Enumerated(EnumType.STRING)
 	@Column(name = "seat_type")
 	private SeatType seatType;
+	
+	// ✅ DOMAIN CONSTRUCTOR
+	public Seat(String rowLabel, int seatNumber, SeatType seatType) {
+		this.rowLabel = rowLabel;
+		this.seatNumber = seatNumber;
+		this.seatType = seatType;
+	}
 }
