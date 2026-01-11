@@ -2,14 +2,16 @@ package com.theater.movie_reservation_system.service;
 
 import com.theater.movie_reservation_system.entity.Auditorium;
 import com.theater.movie_reservation_system.entity.Seat;
-import com.theater.movie_reservation_system.entity.Theater;
 import com.theater.movie_reservation_system.enums.SeatType;
 import com.theater.movie_reservation_system.repository.AuditoriumRepository;
 import com.theater.movie_reservation_system.repository.SeatRepository;
 import com.theater.movie_reservation_system.repository.TheaterRepository;
+import jakarta.validation.constraints.NotNull;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class SeatService {
 	
 	private final SeatRepository seatRepository;
@@ -22,22 +24,16 @@ public class SeatService {
 		this.theaterRepository = theaterRepository;
 	}
 	
-	public Seat createSeatSections(Long theaterId, // later task: I think we should and can remove the theaterId from here as it is already present in the auditoriumId
-	                               Long auditoriumId,
-	                               String row_label,
-	                               int seatNumber,
-	                               SeatType seatType) {
-		// 1. Find the Theater and Auditorium first (Parents must exist!)
-		Theater theater = theaterRepository.findById(theaterId)
-				.orElseThrow(() -> new RuntimeException("Theater not found with id: " + theaterId));
+	public Seat createSeat(Long auditoriumId,
+	                       String row_label,
+	                       int seatNumber,
+	                       SeatType seatType) {
 		
 		Auditorium auditorium = auditoriumRepository.findById(auditoriumId)
 				.orElseThrow(() -> new RuntimeException(("Auditorium not found with id: " + auditoriumId)));
 		
-		// 2. Create seats with the section
 		Seat seat = new Seat(row_label, seatNumber, seatType);
 		
-		// 3. Save (Foreign key auditorium_id will be set automatically)
 		return seatRepository.save(seat);
 	}
 	

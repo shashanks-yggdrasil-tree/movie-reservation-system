@@ -18,7 +18,7 @@ public class SeatController {
 		this.seatService = seatService;
 	}
 	
-	@GetMapping
+	@GetMapping("/by-auditorium/{auditoriumId}")
 	public ResponseEntity<List<Seat>> getByAuditorium(@PathVariable Long auditoriumId) {
 		return ResponseEntity.ok(seatService.getAllSeatsByAuditorium(auditoriumId));
 	}
@@ -30,13 +30,12 @@ public class SeatController {
 	
 	@PostMapping
 	public  ResponseEntity<Seat> createSeats(
-			@RequestParam Long theaterId, // later task: I think we should and can remove the theaterId from here as it is already present in the auditoriumId
 			@RequestParam Long auditoriumId,
 			@RequestParam String row_label,
 			@RequestParam int seatNumber,
 			@RequestParam SeatType seatType
 			) {
-		Seat seat = seatService.createSeatSections(theaterId, auditoriumId, row_label, seatNumber, seatType);
+		Seat seat = seatService.createSeat(auditoriumId, row_label, seatNumber, seatType);
 		return ResponseEntity.ok(seat);
 	}
 	
