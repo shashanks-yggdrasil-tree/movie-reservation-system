@@ -1,4 +1,4 @@
-package com.theater.movie_reservation_system.controller;
+package com.theater.movie_reservation_system.controller.adminapi;
 
 import com.theater.movie_reservation_system.entity.Movie;
 import com.theater.movie_reservation_system.enums.DeleteResult;

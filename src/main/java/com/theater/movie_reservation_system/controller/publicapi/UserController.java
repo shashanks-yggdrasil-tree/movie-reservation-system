@@ -1,4 +1,4 @@
-package com.theater.movie_reservation_system.controller;
+package com.theater.movie_reservation_system.controller.publicapi;
 
 import com.theater.movie_reservation_system.dto.LoginRequestDTO;
 import com.theater.movie_reservation_system.dto.SignUpRequestDTO;

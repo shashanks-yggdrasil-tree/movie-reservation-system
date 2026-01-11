@@ -1,4 +1,4 @@
-package com.theater.movie_reservation_system.controller;
+package com.theater.movie_reservation_system.controller.publicapi;
 
 
 import org.springframework.web.bind.annotation.GetMapping;

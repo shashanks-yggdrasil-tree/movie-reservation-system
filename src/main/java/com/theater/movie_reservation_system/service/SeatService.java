@@ -11,7 +11,7 @@ import com.theater.movie_reservation_system.repository.TheaterRepository;
 import java.util.List;
 
 public class SeatService {
-
+	
 	private final SeatRepository seatRepository;
 	private final AuditoriumRepository auditoriumRepository;
 	private final TheaterRepository theaterRepository;
@@ -22,7 +22,11 @@ public class SeatService {
 		this.theaterRepository = theaterRepository;
 	}
 	
-	public Seat createSeatSections(Long theaterId, Long auditoriumId, String row_label, int seatNumber, SeatType seatType) {
+	public Seat createSeatSections(Long theaterId, // later task: I think we should and can remove the theaterId from here as it is already present in the auditoriumId
+	                               Long auditoriumId,
+	                               String row_label,
+	                               int seatNumber,
+	                               SeatType seatType) {
 		// 1. Find the Theater and Auditorium first (Parents must exist!)
 		Theater theater = theaterRepository.findById(theaterId)
 				.orElseThrow(() -> new RuntimeException("Theater not found with id: " + theaterId));
