@@ -35,7 +35,7 @@ public class Showtime {
 	private Auditorium auditorium;
 	
 	@Column(name = "show_time", nullable = false)
-	private LocalDateTime showTime;
+	private LocalDateTime showTime; // later task: add start time and end time instead of just showTime
 	
 	@Column(name = "price", nullable = false)
 	private BigDecimal price;

@@ -459,3 +459,50 @@ com.theater.movie_reservation_system.controller.adminapi.SeatController#getByAud
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1813) ~[spring-beans-7.0.1.jar:7.0.1]
 	... 18 common frames omitted
 
+2026-01-11T17:57:28.405+05:30  INFO 1976 --- [movie-reservation-system] [main] c.t.m.MovieReservationSystemApplication  : Starting MovieReservationSystemApplication using Java 24.0.2 with PID 1976 (D:\java\roadmap_sh_projects\Movie Reservation System\movie-reservation-system\target\classes started by shash in D:\java\roadmap_sh_projects\Movie Reservation System\movie-reservation-system)
+2026-01-11T17:57:28.411+05:30  INFO 1976 --- [movie-reservation-system] [main] c.t.m.MovieReservationSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-01-11T17:57:29.972+05:30  INFO 1976 --- [movie-reservation-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-11T17:57:30.131+05:30  INFO 1976 --- [movie-reservation-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 138 ms. Found 6 JPA repository interfaces.
+2026-01-11T17:57:31.161+05:30  INFO 1976 --- [movie-reservation-system] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-01-11T17:57:31.187+05:30  INFO 1976 --- [movie-reservation-system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-11T17:57:31.187+05:30  INFO 1976 --- [movie-reservation-system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.14]
+2026-01-11T17:57:31.296+05:30  INFO 1976 --- [movie-reservation-system] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2804 ms
+2026-01-11T17:57:31.618+05:30  INFO 1976 --- [movie-reservation-system] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-11T17:57:31.711+05:30  INFO 1976 --- [movie-reservation-system] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 7.1.8.Final
+2026-01-11T17:57:32.531+05:30  INFO 1976 --- [movie-reservation-system] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-11T17:57:32.576+05:30  INFO 1976 --- [movie-reservation-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-01-11T17:57:32.801+05:30  INFO 1976 --- [movie-reservation-system] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@215a0264
+2026-01-11T17:57:32.804+05:30  INFO 1976 --- [movie-reservation-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-01-11T17:57:32.849+05:30  WARN 1976 --- [movie-reservation-system] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-01-11T17:57:32.884+05:30  INFO 1976 --- [movie-reservation-system] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/userdb]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 15.15
+	Default catalog/schema: userdb/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DatasourceConnectionProviderImpl
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-11T17:57:34.291+05:30  INFO 1976 --- [movie-reservation-system] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-11T17:57:34.412+05:30  WARN 1976 --- [movie-reservation-system] [main] org.hibernate.orm.jdbc.warn              : HHH000247: ErrorCode: 0, SQLState: 00000
+2026-01-11T17:57:34.412+05:30  WARN 1976 --- [movie-reservation-system] [main] org.hibernate.orm.jdbc.warn              : constraint "uk_auditorium_row_seat" of relation "auditorium_seats" does not exist, skipping
+2026-01-11T17:57:34.508+05:30  INFO 1976 --- [movie-reservation-system] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-11T17:57:34.657+05:30  INFO 1976 --- [movie-reservation-system] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-01-11T17:57:37.299+05:30  WARN 1976 --- [movie-reservation-system] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-11T17:57:38.212+05:30  INFO 1976 --- [movie-reservation-system] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-01-11T17:57:38.224+05:30  INFO 1976 --- [movie-reservation-system] [main] c.t.m.MovieReservationSystemApplication  : Started MovieReservationSystemApplication in 10.492 seconds (process running for 11.161)
+2026-01-11T17:57:38.230+05:30  WARN 1976 --- [movie-reservation-system] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-01-11T17:57:38.230+05:30  WARN 1976 --- [movie-reservation-system] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-01-11T17:58:23.039+05:30  INFO 1976 --- [movie-reservation-system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-11T17:58:23.040+05:30  INFO 1976 --- [movie-reservation-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-11T17:58:23.043+05:30  INFO 1976 --- [movie-reservation-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-01-11T18:00:08.698+05:30  INFO 1976 --- [movie-reservation-system] [http-nio-8080-exec-5] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 1194 ms
+2026-01-11T19:07:45.763+05:30  WARN 1976 --- [movie-reservation-system] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m11s956ms859µs800ns).
+2026-01-11T19:24:53.460+05:30  INFO 1976 --- [movie-reservation-system] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-11T19:24:53.473+05:30  INFO 1976 --- [movie-reservation-system] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-01-11T19:24:53.489+05:30  INFO 1976 --- [movie-reservation-system] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-11T19:24:53.508+05:30  INFO 1976 --- [movie-reservation-system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-01-11T19:24:53.515+05:30  INFO 1976 --- [movie-reservation-system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
