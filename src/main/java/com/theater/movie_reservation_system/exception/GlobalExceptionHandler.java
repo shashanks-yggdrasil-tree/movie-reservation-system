@@ -7,6 +7,7 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -48,6 +49,18 @@ public class GlobalExceptionHandler {
 		
 		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
 		
+	}
+	
+	@ExceptionHandler(SeatNotAvailableException.class)
+	public ResponseEntity<Map<String, Object>> handleSeatNotAvailable(SeatNotAvailableException ex) {
+		Map<String, Object> response = new HashMap<>();
+		
+		response.put("success", false);
+		response.put("message", ex.getMessage());
+		response.put("error", "SEAT_NOT_AVAILABLE");
+		response.put("timestamp", LocalDateTime.now());
+		
+		return ResponseEntity.status(HttpStatus.CONFLICT).body(response);
 	}
 	
 }

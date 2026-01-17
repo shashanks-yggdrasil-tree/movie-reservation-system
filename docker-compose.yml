@@ -18,6 +18,9 @@ services:
     container_name: booking-redis
     ports:
       - "6379:6379"
+    volumes:
+      - redis_data:/data # Added this for persistence
+    command: redis-server --appendonly yes # Add this for AOF
     restart: unless-stopped
 
 volumes:

@@ -20,7 +20,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class Seat {
+public class AuditoriumSeat {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -42,9 +42,10 @@ public class Seat {
 	private SeatType seatType;
 	
 	// ✅ DOMAIN CONSTRUCTOR
-	public Seat(String rowLabel, int seatNumber, SeatType seatType) {
+	public AuditoriumSeat(String rowLabel, int seatNumber, SeatType seatType, Auditorium auditorium) {
 		this.rowLabel = rowLabel;
 		this.seatNumber = seatNumber;
 		this.seatType = seatType;
+		this.auditorium = auditorium;
 	}
 }

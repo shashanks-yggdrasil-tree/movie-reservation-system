@@ -2,12 +2,20 @@ package com.theater.movie_reservation_system.entity;
 
 import com.theater.movie_reservation_system.enums.ReservationStatus;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "reservations")
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class Reservation {
 	
 	@Id

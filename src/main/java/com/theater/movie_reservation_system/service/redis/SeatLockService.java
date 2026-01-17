@@ -14,8 +14,8 @@ public class SeatLockService {
 	private RedisTemplate<String, String> redisTemplate;
 	
 	// Lock seat for 10 minutes
-	public boolean lockSeat(Long showtimeId, Long seatId, Long userId) {
-		String key = String.format("showtime:%d:seat%d", showtimeId, seatId); // object:id:field or object:id
+	public boolean lockSeat(Long showtimeSeatStatusId, Long userId) {
+		String key = String.format("lock:showtime_seat:%d", showtimeSeatStatusId); // object:id:field or object:id
 		
 		// SET if NOT exists with 10-minute expiry. Here key is key, value is userId
 		return Boolean.TRUE.equals(
@@ -24,26 +24,23 @@ public class SeatLockService {
 	}
 	
 	// Release seat lock
-	public void releaseSeat(Long showtimeId, Long seatId) {
-		String key = String.format("showtime:%d:seat%d", showtimeId, seatId); // object:id:field or object:id
+	public void releaseSeat(Long showtimeSeatStatusId) {
+		String key = String.format("lock:showtime_seat:%d", showtimeSeatStatusId);
 		redisTemplate.delete(key);
-	} // later task: Question: I do not understand why this pattern of not sending back a confirmation where the user is
-//					 confirmed deleted or not is practiced? and why usually they do not send back anything!
+	}
 	
-	
-	// Check is seat is available
-	public boolean isSeatAvailable(Long showtimeId, Long seatId) {
-		String key = String.format("showtime:%d:seat%d", showtimeId, seatId); // object:id:field or object:id
+	// Check if seat is available
+	public boolean isSeatAvailable(Long showtimeSeatStatusId) {
+		String key = String.format("lock:showtime_seat:%d", showtimeSeatStatusId);
 		return !Boolean.TRUE.equals(redisTemplate.hasKey(key));
 	}
 	
 	// Get user who locked the seat
-	public Optional<Long> getLockingUser(Long showtimeId, Long seatId) {
-		String key = String.format("showtime:%d:seat%d", showtimeId, seatId);
+	public Optional<Long> getLockingUser(Long showtimeSeatStatusId) {
+		String key = String.format("lock:showtime_seat:%d", showtimeSeatStatusId);
 		String userId = redisTemplate.opsForValue().get(key);
 		return Optional.ofNullable(userId).map(Long::valueOf);
 	}
-	
 }
 
 

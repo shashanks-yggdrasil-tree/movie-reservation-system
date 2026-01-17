@@ -36,10 +36,7 @@ public class Showtime {
 	
 	@Column(name = "show_time", nullable = false)
 	private LocalDateTime showTime; // later task: add start time and end time instead of just showTime
-	
-	@Column(name = "price", nullable = false)
-	private BigDecimal price;
-	
+
 	@Column(name = "created_at", updatable = false)
 	private LocalDateTime createdAt;
 	
@@ -49,12 +46,11 @@ public class Showtime {
 	// ========= Constructors =========
 	public Showtime() {}
 	
-	public Showtime(Movie movie, Theater theater, Auditorium auditorium, LocalDateTime showTime, BigDecimal price) {
+	public Showtime(Movie movie, Theater theater, Auditorium auditorium, LocalDateTime showTime) {
 		this.movie = movie;
 		this.theater = theater;
 		this.auditorium = auditorium;
 		this.showTime = showTime;
-		this.price = price;
 	}
 	
 	// ======== Lifecycle =========
@@ -90,10 +86,6 @@ public class Showtime {
 		return showTime;
 	}
 	
-	public BigDecimal getPrice() {
-		return price;
-	}
-	
 	public LocalDateTime getCreatedAt() {
 		return createdAt;
 	}
@@ -122,10 +114,6 @@ public class Showtime {
 		this.showTime = showTime;
 	}
 	
-	public void setPrice(BigDecimal price) {
-		this.price = price;
-	}
-	
 	public void setCreatedAt(LocalDateTime createdAt) {
 		this.createdAt = createdAt;
 	}
@@ -142,7 +130,6 @@ public class Showtime {
 				", theater=" + (theater != null ? theater.getTheaterName() : "null") +
 				", auditorium=" + (auditorium != null ? auditorium.getScreenName() : "null") +
 				", showTime=" + showTime +
-				", price=" + price +
 				'}';
 	}
 }
