@@ -120,60 +120,73 @@ class PaperClipAI:
 
         return "\n".join(prompt_parts)
 
+    def _call_ollama_api(self, prompt: str) -> str:
+        """Call local Ollama API"""
+        url = "http://host.docker.internal:11434/api/generate"
+
+        # Combine system prompt + user prompt
+        full_prompt = f"""{self._build_system_prompt()}
+
+    User Context: {prompt}
+    
+    As Clippy, respond helpfully:"""
+
+        data = {
+            "model": "tinyllama",  # Change to your model
+            "prompt": full_prompt,
+            "stream": False,
+            "options": {
+                "temperature": 0.7,
+                "num_predict": 150  # Max tokens
+            }
+        }
+
+        try:
+            response = requests.post(url, json=data, timeout=30)
+            response.raise_for_status()
+            result = response.json()
+            return result["response"].strip()
+        except requests.exceptions.ConnectionError:
+            logger.error("Ollama not running. Start with: ollama serve")
+            raise
+        except Exception as e:
+            logger.error(f"Ollama API error: {e}")
+            raise
+
+
+
     def process_action(self, action: UserAction) -> AIResponse:
-        """Process user action and generate AI response"""
+        logger.info(f"Processing action: {action.action_type}")
 
         # Update conversation history
         if action.session_id not in self.conversation_history:
             self.conversation_history[action.session_id] = []
 
-        # If no API key, return mock response
-        if not self.api_key:
-            logger.warning("No DeepSeek API key. Using mock response.")
-            return self._generate_mock_response(action)
-
         try:
-            # Build user prompt
             user_prompt = self._build_user_prompt(action)
+            logger.info(f"Built prompt: {user_prompt[:100]}...")
 
-            # Call DeepSeek API
-            ai_message = self._call_deepseek_api(user_prompt)
-
-            # Parse response
-            suggestion = None
-            if "Suggestion:" in ai_message:
-                parts = ai_message.split("Suggestion:")
-                ai_message = parts[0].strip()
-                suggestion = parts[1].strip()
-
-            # Create AI response
-            ai_response = AIResponse(
-                response_id=str(uuid.uuid4()),
-                session_id=action.session_id,
-                user_id=action.user_id,
-                message=ai_message,
-                suggestion=suggestion,
-                triggered_by_action=action.action_type,
-                confidence_score=0.85
-            )
-
-            # Store in history
-            self.conversation_history[action.session_id].append(
-                f"User: {action.action_type.value} | AI: {ai_message}"
-            )
-
-            # Keep history manageable
-            if len(self.conversation_history[action.session_id]) > 10:
-                self.conversation_history[action.session_id] = \
-                    self.conversation_history[action.session_id][-10:]
-
-            logger.info(f"Generated AI response: {ai_message[:50]}...")
-            return ai_response
+            # Try Ollama
+            ai_message = self._call_ollama_api(user_prompt)
+            confidence = 0.85
+            logger.info(f"Ollama response: {ai_message[:100]}...")
 
         except Exception as e:
-            logger.error(f"Error processing action with DeepSeek: {e}")
-            return self._generate_mock_response(action)
+            logger.warning(f"Ollama failed: {e}. Using mock response.")
+            return self._generate_mock_response(action)  # ✅ This should return
 
+        # Create AI response
+        ai_response = AIResponse(
+            response_id=str(uuid.uuid4()),
+            session_id=action.session_id,
+            user_id=action.user_id,
+            message=ai_message,
+            triggered_by_action=action.action_type,
+            confidence_score=confidence
+        )
+
+        logger.info(f"Created AI response with confidence: {confidence}")
+        return ai_response  # ✅ MUST HAVE THIS RETURN!
     def _generate_mock_response(self, action: UserAction) -> AIResponse:
         """Generate mock response when API fails"""
 
