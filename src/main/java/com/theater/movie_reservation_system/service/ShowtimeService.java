@@ -72,7 +72,7 @@ public class ShowtimeService {
 			showtimeSeat.setSeatStatus(SeatStatus.AVAILABLE);
 			
 			// Set price (could vary by seat type)
-			BigDecimal finalPrice = calculatePrice(basePrice, seat.getSeatType());
+			BigDecimal finalPrice = calculatePrice(basePrice, seat.getSeatType( ));
 			showtimeSeat.setPrice(finalPrice);
 			
 			showtimeSeatRepository.save(showtimeSeat);

@@ -31,3 +31,30 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# ===== Python =====
+venv/
+.env
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# ===== Logs =====
+logs/
+*.log
+
+# ===== IDEs =====
+.idea/
+.vSCode/
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+
+# ===== Java / Spring Boot =====
+*.class
+
+# ===== Docker =====
+*.pid
