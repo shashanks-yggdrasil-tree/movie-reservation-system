@@ -18,7 +18,7 @@ class UserAction(BaseModel):
     session_id: str
     user_id: Optional[str] = None
     action_type: UserActionType
-    page_url: str
+    page_url: Optional[str] = None
     page_title: str
 
     # Mouse/Interaction data
@@ -29,6 +29,7 @@ class UserAction(BaseModel):
 
     # Content context
     movie_id: Optional[int] = None
+    movie_name: Optional[str] = None
     theater_id: Optional[int] = None
     search_query: Optional[str] = None
     selected_seats: Optional[List[int]] = None

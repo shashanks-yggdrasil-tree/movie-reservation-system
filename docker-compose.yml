@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   # ===== DATABASE & CACHE =====
   postgres:
@@ -42,13 +40,18 @@ services:
       - zookeeper
     ports:
       - "9092:9092"
+      - "9093:9093"
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:9093
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092,PLAINTEXT_HOST://0.0.0.0:9093
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
 
   kafka-ui:
     image: provectuslabs/kafka-ui:latest
@@ -60,7 +63,7 @@ services:
     environment:
       KAFKA_CLUSTERS_0_NAME: local
       KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:9092
-
+      KAFKA_CLUSTERS_0_PROPERTIES_SECURITY_PROTOCOL: PLAINTEXT
   ai-assistant:
     extra_hosts:
       - "host.docker.internal:host-gateway"
@@ -70,15 +73,41 @@ services:
       - "8000:8000"
     environment:
       - KAFKA_BOOTSTRAP_SERVERS=kafka:9092
-      - DEEPSEEK_API_KEY=sk-3fd9a840aace41a08440645910208dde
+      - OLLAMA_HOST= http://host.docker.internal:11434
+      - OLLAMA_MODEL=tinyllama
+      - LOG_LEVEL=INFO
     depends_on:
       - kafka
     volumes:
       - ./ai-assistant/src:/app/src  # For development hot-reload
       - ./ai-assistant/requirements.txt:/app/requirements.txt
+    healthcheck:
+      test: [ "CMD", "python", "-c", "import requests; requests.get('http://localhost:8000/health')" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
     restart: unless-stopped
+
+#  spring-boot:
+#    build: .  # Your Spring Boot project path
+#    container_name: spring-boot-app
+#    ports:
+#      - "8080:8080"
+#    environment:
+#      SPRING_PROFILES_ACTIVE: docker
+#      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+#      AI_SERVICE_URL: http://ai-assistant:8000  # For direct API calls
+#    depends_on:
+#      - kafka
+#      - ai-assistant
+#    volumes:
+#      - ./movie-reservation-system:/app
+#    restart: unless-stopped
 
 volumes:
   postgres_data:
   redis_data:
+
+
 

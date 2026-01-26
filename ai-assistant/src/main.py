@@ -31,7 +31,8 @@ app.add_middleware(
 )
 
 # Global instances
-kafka_client = KafkaClient()
+KAFKA_BOOTSTRAP = os.getenv('KAFKA_BOOTSTRAP_SERVERS', 'kafka:9092')
+kafka_client = KafkaClient(bootstrap_servers=KAFKA_BOOTSTRAP)
 ai_processor = PaperClipAI()
 connected_websockets = []
 
@@ -102,11 +103,11 @@ async def startup_event():
     logger.info("Starting PaperClip AI Assistant...")
 
     # Start Kafka client
-    # kafka_client.start()
+    kafka_client.start()
 
     # Start Kafka consumer in background thread
-    # consumer_thread = Thread(target=kafka_consumer_thread, daemon=True)
-    # consumer_thread.start()
+    consumer_thread = Thread(target=kafka_consumer_thread, daemon=True)
+    consumer_thread.start()
 
     logger.info("AI Assistant started successfully!")
 
@@ -133,12 +134,20 @@ async def process_action_directly(action: UserAction):
 
     ai_response = ai_processor.process_action(action)
 
-    # Also send to Kafka for consistency
-    kafka_client.produce(
-        topic="ai-responses",
-        key=action.session_id,
-        value=ai_response.dict()
-    )
+    if ai_response is None:
+        logger.error("AI processor returned None!")
+        return {"error": "AI processing failed"}
+
+    # Only produce to Kafka if not None
+    try:
+        kafka_client.produce(
+            topic="ai-responses",
+            key=action.session_id,
+            value=ai_response.dict()
+        )
+    except Exception as e:
+        logger.error(f"Failed to send to Kafka: {e}")
+        # Still return response even if Kafka fails
 
     return ai_response
 
