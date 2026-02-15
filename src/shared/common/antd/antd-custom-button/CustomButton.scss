@@ -1,0 +1,447 @@
+@use '../../../../style/main.scss' as *;
+@use '../../../../style/variables.scss';
+
+.antd-custom-button {
+  &.default {
+    border-radius: 8px;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease; // Add transition for smooth animations
+
+    &.scale-btn-hover {
+      &:hover:not(:disabled) {
+        transform: scale(1.2);
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease,
+          transform 0.3s ease;
+      }
+    }
+
+    &.btn-icon {
+      justify-content: center;
+      display: flex;
+
+      &.ant-btn-variant-outlined:not(:disabled):not(.ant-btn-disabled):hover {
+        background: transparent !important;
+      }
+    }
+
+    &.btn-primary {
+      background-color: $primary-blue;
+      color: $secondary-text;
+      font-weight: 600;
+      border: none;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px $shadow-color;
+      transition: all 0.3s ease;
+
+      &:hover:not(:disabled) {
+        color: $button-primary-text;
+        background-color: $button-primary-bg;
+
+        transform: scale(1.05);
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease,
+          transform 0.3s ease;
+      }
+
+      &:disabled {
+        cursor: not-allowed;
+        border-color: #d9d9d9;
+        color: rgba(0, 0, 0, 0.25);
+        background: rgba(0, 0, 0, 0.04);
+        box-shadow: none;
+      }
+    }
+    // &.btn-primary {
+    //   background-color: $button-primary-bg;
+    //   color: $button-primary-text;
+    //   border: none;
+    // }
+
+    &.btn-secondary {
+      background-color: $button-secondary-bg;
+      color: $button-secondary-text;
+      border: none;
+
+      &:hover:not(:disabled) {
+        color: $button-secondary-text;
+        background-color: $button-secondary-bg;
+
+        transform: scale(1.05);
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease,
+          transform 0.3s ease;
+      }
+
+      &:disabled {
+        cursor: not-allowed;
+        border-color: #d9d9d9;
+        color: rgba(0, 0, 0, 0.25);
+        background: rgba(0, 0, 0, 0.04);
+        box-shadow: none;
+      }
+    }
+
+    &.btn-red-hover {
+      background-color: $button-tertiary-bg; // normal state
+      color: $button-tertiary-text;
+      border: 1px solid $button-tertiary-border-color;
+
+      &:hover:not(:disabled) {
+        background-color: $base-error; // 🔥 red on hover
+        color: white;
+        border: none;
+
+        transform: scale(1.05);
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease,
+          transform 0.3s ease;
+      }
+
+      &:disabled {
+        cursor: not-allowed;
+        border-color: #d9d9d9;
+        color: rgba(0, 0, 0, 0.25);
+        background: rgba(0, 0, 0, 0.04);
+        box-shadow: none;
+      }
+    }
+
+    &.custom-margin {
+      .ant-btn-icon {
+        margin-bottom: -5px;
+      }
+    }
+    &.custom-margin-2 {
+      .ant-btn-icon {
+        margin-bottom: -2px;
+      }
+    }
+
+    &.btn-tertiary {
+      background-color: $button-tertiary-bg;
+      color: $button-tertiary-text;
+      border-color: $button-tertiary-border-color;
+
+      &:hover:not(:disabled) {
+        color: $button-primary-text;
+        background-color: $primary-blue;
+        border-color: none;
+        border: none;
+
+        transform: scale(1.05);
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease,
+          transform 0.3s ease;
+      }
+
+      &:disabled {
+        cursor: not-allowed;
+        border-color: #d9d9d9;
+        color: rgba(0, 0, 0, 0.25);
+        background: rgba(0, 0, 0, 0.04);
+        box-shadow: none;
+      }
+    }
+    &.btn-delete {
+      background-color: $button-primary-text;
+      color: $button-tertiary-text;
+      border-color: $button-tertiary-border-color;
+
+      &:hover:not(:disabled) {
+        color: white;
+        background-color: $base-error;
+        border: none;
+
+        transform: scale(1.05);
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease,
+          transform 0.3s ease;
+      }
+    }
+
+    &.logout-button {
+      &:hover:not(:disabled) {
+        color: $base-error;
+        background-color: inherit;
+        border-color: $base-error;
+      }
+    }
+
+    &.btn-folder {
+      @apply rounded px-4 py-2 text-white transition-colors duration-200;
+
+      background-color: $button-primary-bg; // Using primary background color
+      color: $button-primary-text;
+      border: none;
+
+      &:hover:not(:disabled) {
+        background-color: #1e7fd8; // Slightly darker on hover
+        color: $button-primary-text;
+        transform: scale(1.05);
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease,
+          transform 0.3s ease;
+      }
+
+      &:disabled {
+        cursor: not-allowed;
+        border-color: #d9d9d9;
+        color: rgba(0, 0, 0, 0.25);
+        background: rgba(0, 0, 0, 0.04);
+        box-shadow: none;
+      }
+    }
+
+    &.blue-btn {
+      @apply rounded px-4 py-2 text-white;
+
+      background-color: $button-primary-bg; // Using primary background color
+      color: $button-primary-text;
+      border: none;
+
+      &:hover:not(:disabled) {
+        background-color: #1e7fd8; // Slightly darker on hover
+        color: $button-primary-text;
+      }
+
+      &:disabled {
+        cursor: not-allowed;
+        border-color: #d9d9d9;
+        color: rgba(0, 0, 0, 0.25);
+        background: rgba(0, 0, 0, 0.04);
+        box-shadow: none;
+      }
+    }
+  }
+
+  &.default {
+    &.workflow-button {
+      background: var(--secondary-blue);
+      background-color: var(--secondary-blue);
+      color: var(--secondary-text) !important;
+      border: none;
+      border-radius: 4px;
+      &:hover {
+        background: var(--primary-blue-dark);
+        background-color: var(--primary-blue-dark);
+        color: var(--secondary-text) !important;
+        border: none;
+        border-radius: 4px;
+      }
+
+      .ant-btn-variant-outlined:not(:disabled):not(.ant-btn-disabled):hover {
+        background: var(--secondary-blue);
+        background-color: var(--secondary-blue);
+        color: var(--secondary-text) !important;
+        border: none;
+        border-radius: 4px;
+      }
+    }
+  }
+}
+
+// .ant-btn-lg.ant-btn-icon-only {
+//   width: 32px;
+// }
+// // After (using @use)
+// @use '../../../../style/main.scss' as *;
+
+// .antd-custom-button {
+//   &.default {
+//     border-radius: 10px;
+//     transition:
+//       background-color 0.3s ease,
+//       color 0.3s ease; // Add transition for smooth animations
+//       height: min-content;
+
+//     &.small-btn {
+//       height: 18px;
+//       min-height: 18px;
+//       width: 18px;
+//       min-width: 18px;
+//     }
+
+//     &.scale-btn-hover {
+//       &:hover:not(:disabled) {
+//         transform: scale(1.2);
+//         transition:
+//           background-color 0.3s ease,
+//           color 0.3s ease,
+//           transform 0.3s ease;
+//       }
+//     }
+
+//     &.btn-primary {
+//       background-color: $button-primary-bg;
+//       color: $button-primary-text;
+//       border: none;
+
+//       &:hover:not(:disabled) {
+//         color: $button-primary-text;
+//         background-color: $button-primary-bg;
+
+//         transform: scale(1.05);
+//         transition:
+//           background-color 0.3s ease,
+//           color 0.3s ease,
+//           transform 0.3s ease;
+//       }
+
+//       &:disabled {
+//         cursor: not-allowed;
+//         border-color: #d9d9d9;
+//         color: rgba(0, 0, 0, 0.25);
+//         background: rgba(0, 0, 0, 0.04);
+//         box-shadow: none;
+//       }
+//     }
+
+//     &.btn-secondary {
+//       background-color: $button-secondary-bg;
+//       color: $button-secondary-text;
+//       border: none;
+
+//       &:hover:not(:disabled) {
+//         color: $button-secondary-text;
+//         background-color: $button-secondary-bg;
+
+//         transform: scale(1.05);
+//         transition:
+//           background-color 0.3s ease,
+//           color 0.3s ease,
+//           transform 0.3s ease;
+//       }
+
+//       &:disabled {
+//         cursor: not-allowed;
+//         border-color: #d9d9d9;
+//         color: rgba(0, 0, 0, 0.25);
+//         background: rgba(0, 0, 0, 0.04);
+//         box-shadow: none;
+//       }
+//     }
+
+//     &.btn-tertiary {
+//       background-color: $button-tertiary-bg;
+//       color: $button-tertiary-text;
+//       border-color: $button-tertiary-border-color;
+//         height: 30px;
+//         font-size: small;
+
+//       &:hover:not(:disabled) {
+//         color: $button-primary-text;
+//         background-color: $button-primary-bg;
+//         border-color: none;
+
+//         transform: scale(1.05);
+//         transition:
+//           background-color 0.3s ease,
+//           color 0.3s ease,
+//           transform 0.3s ease;
+//       }
+
+//       &:disabled {
+//         cursor: not-allowed;
+//         border-color: #d9d9d9;
+//         color: rgba(0, 0, 0, 0.25);
+//         background: rgba(0, 0, 0, 0.04);
+//         box-shadow: none;
+//       }
+//     }
+//     &.btn-delete {
+//       background-color: $button-primary-text;
+//       color: $button-tertiary-text;
+//       border-color: $button-tertiary-border-color;
+
+//       &:hover:not(:disabled) {
+//         color: white;
+//         background-color: $base-error;
+//         border: none;
+
+//         transform: scale(1.05);
+//         transition:
+//           background-color 0.3s ease,
+//           color 0.3s ease,
+//           transform 0.3s ease;
+//       }
+//     }
+
+//     &.logout-button {
+//       &:hover:not(:disabled) {
+//         color: $base-error;
+//         background-color: inherit;
+//         border-color: $base-error;
+//       }
+//     }
+
+//     &.btn-folder {
+//       @apply rounded px-4 py-2 text-white transition-colors duration-200;
+
+//       background-color: $button-primary-bg; // Using primary background color
+//       color: $button-primary-text;
+//       border: none;
+
+//       &:hover:not(:disabled) {
+//         background-color: #1e7fd8; // Slightly darker on hover
+//         color: $button-primary-text;
+//         transform: scale(1.05);
+//         transition:
+//           background-color 0.3s ease,
+//           color 0.3s ease,
+//           transform 0.3s ease;
+//       }
+
+//       &:disabled {
+//         cursor: not-allowed;
+//         border-color: #d9d9d9;
+//         color: rgba(0, 0, 0, 0.25);
+//         background: rgba(0, 0, 0, 0.04);
+//         box-shadow: none;
+//       }
+//     }
+
+//     &.blue-btn {
+//       @apply rounded px-4 py-2 text-white;
+
+//       background-color: $button-primary-bg; // Using primary background color
+//       color: $button-primary-text;
+//       border: none;
+//       height: 35px;
+
+//       &:hover:not(:disabled) {
+//         background-color: #1e7fd8; // Slightly darker on hover
+//         color: $button-primary-text;
+//       }
+
+//       &:disabled {
+//         cursor: not-allowed;
+//         border-color: #d9d9d9;
+//         color: rgba(0, 0, 0, 0.25);
+//         background: rgba(0, 0, 0, 0.04);
+//         box-shadow: none;
+//       }
+//     }
+//   }
+// }
+
+// .ant-btn-lg {
+//    height: 30px;
+// }
+
+// .ant-btn-lg.ant-btn-icon-only {
+//   width: 32px;
+// }
+
+// .ant-btn-lg.ant-btn-icon-only {
+//   width: 32px;
+// }
+// // After (using @use)

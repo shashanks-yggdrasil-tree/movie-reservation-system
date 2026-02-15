@@ -1,0 +1,10 @@
+// After (using @use)
+@use '../../../../style/main.scss' as *;
+
+.custom-search {
+  &.default {
+    &.ant-input-search > .ant-input-group > .ant-input-group-addon:last-child .ant-input-search-button {
+      background-color: #427bb8 !important;
+    }
+  }
+}

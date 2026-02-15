@@ -1,0 +1,12 @@
+@use '../../../../style/main.scss' as *;
+
+.custom-date-picker {
+  &.default {
+    width: 100%;
+    height: auto;
+    &.error {
+      border-width: 1px !important;
+      border-color: #ef4444;
+    }
+  }
+}

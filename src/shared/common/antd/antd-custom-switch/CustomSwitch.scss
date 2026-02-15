@@ -1,0 +1,49 @@
+// // After (using @use)
+// @use '../../../../style/main.scss' as *;
+// .custom-switch {
+//   &.ant-switch {
+//     background-color: rgba(32, 37, 39, 0.7);
+
+//     .ant-switch-handle {
+//       &::before {
+//         background-size: 26px;
+//         transform: rotate(270deg);
+//         background-color: rgba(32, 37, 39, 0.7);
+//       }
+//     }
+
+//     &:not(.ant-switch-checked) {
+//       .ant-switch-handle {
+//         inset-inline-start: 3px;
+//       }
+//     }
+
+//     &.ant-switch-checked {
+//       color: $base-white-40;
+//       background: white;
+
+//       &:hover:not(.ant-switch-disabled) {
+//         color: unset;
+//         background: white;
+//       }
+
+//       .ant-switch-handle {
+//         inset-inline-start: calc(100% - 20px);
+
+//         &::before {
+//           background: url('/images/orange_circle_filled.svg') center/16px no-repeat;
+//           background-color: white;
+//         }
+//       }
+//     }
+
+//     .ant-switch-inner {
+//       color: white;
+//       background: rgb(255 255 255 / 20%);
+//     }
+
+//     &.default {
+//       background: rgb(255 255 255 / 20%);
+//     }
+//   }
+// }

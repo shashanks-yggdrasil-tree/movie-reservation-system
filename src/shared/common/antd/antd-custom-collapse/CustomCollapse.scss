@@ -1,0 +1,106 @@
+@use '../../../../style/main.scss' as *;
+
+.custom-collapse.ant-collapse {
+  // margin-top: 1em;
+
+  .children-collapse {
+    &.ant-collapse-item {
+      .ant-collapse-header {
+        background: #4c93a8 !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-color: white;
+        border-radius: 8px 8px 0 0;
+        padding: 4px 16px;
+        color: white;
+        font-weight: 600;
+        transition: background 0.3s ease-in-out;
+      }
+    }
+  }
+
+  .ant-collapse-item {
+    .ant-collapse-header {
+      background: linear-gradient(45deg, #2e7697, #2e7697, #4597bd, #2e7697);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-color: white;
+      border-radius: 8px 8px 0 0;
+      padding: 6px 14px;
+      color: white;
+      font-weight: 600;
+      transition: background 0.3s ease-in-out;
+
+      .ant-collapse-expand-icon {
+        padding-inline-end: 10px;
+      }
+    }
+
+    &.ant-collapse-item-active {
+      .ant-collapse-header {
+        background: linear-gradient(45deg, #2e7697, #2e7697, #4597bd, #2e7697);
+      }
+    }
+
+    .ant-collapse-content {
+      &.ant-collapse-content-active {
+        background: $base-white-12;
+        animation: fadeIn 0.3s ease-in-out;
+      }
+
+      .ant-collapse-content-box {
+        overflow-y: auto;
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// @use '../../../../style/main.scss' as *;
+
+// .custom-collapse.ant-collapse {
+//   margin-top: 1em;
+
+//   .ant-collapse-item {
+//     .ant-collapse-header {
+//       background: #5a9bd5;
+//       // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+//       border-color: white;
+//       border-radius: 8px 8px 0 0;
+//       color: white;
+//       font-weight: 600;
+//       transition: background 0.3s ease-in-out;
+//     }
+
+//     &.ant-collapse-item-active {
+//       .ant-collapse-header {
+//         background: #5a9bd5;
+//       }
+//     }
+
+//     .ant-collapse-content {
+//       &.ant-collapse-content-active {
+//         animation: fadeIn 0.3s ease-in-out;
+//       }
+
+//       .ant-collapse-content-box {
+//         overflow-y: auto;
+//       }
+//     }
+//   }
+// }
+
+// @keyframes fadeIn {
+//   from {
+//     opacity: 0;
+//   }
+//   to {
+//     opacity: 1;
+//   }
+// }

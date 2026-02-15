@@ -1,0 +1,25 @@
+.antd-custom-tags {
+  &.default {
+    &.ant-tag-success {
+      background: #18c4920d;
+      border: unset;
+      border-radius: 2px;
+      color: #18c492;
+      font-weight: 500;
+    }
+    &.ant-tag-warning {
+      background: #fac67033;
+      border: unset;
+      border-radius: 2px;
+      color: #ffb580;
+      font-weight: 500;
+    }
+    &.ant-tag-error {
+      background: #f86f6933;
+      border: unset;
+      border-radius: 2px;
+      color: #ff0b00;
+      font-weight: 500;
+    }
+  }
+}

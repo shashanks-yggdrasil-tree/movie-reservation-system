@@ -1,0 +1,194 @@
+// After (using @use)
+@use '../../../../style/main.scss' as *;
+
+//.ant-upload-wrapper .ant-upload-list.ant-upload-list-picture .ant-upload-list-item
+
+.ant-upload-list-item-name {
+  // pointer-events: none;
+  color: inherit;
+  text-decoration: none;
+  user-select: none;
+}
+
+.ant-upload-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 0;
+
+  .ant-upload-btn {
+    background: rgba($base-white, 0.04);
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+    row-gap: 10px;
+
+    .ant-upload-drag {
+      display: flex;
+    }
+  }
+
+  .ant-upload-drag {
+    .ant-upload-drag-container {
+      justify-content: center;
+      display: flex;
+    }
+    .ant-upload-btn:hover {
+      outline: unset;
+    }
+  }
+  .ant-upload-drag:not(.ant-upload-disabled):hover {
+    border: 2px dashed $base-white-40;
+  }
+
+  &.file-uploaded {
+    .ant-upload {
+      display: none;
+    }
+  }
+
+  .ant-upload-list.ant-upload-list-picture .ant-upload-list-item {
+    padding: 0;
+    margin: 0;
+    height: 0;
+    .ant-upload-list-item-thumbnail {
+      display: none;
+    }
+    .ant-upload-list-item-name {
+      display: none;
+      // background: $base-white-12;
+      // padding: 14px 20px 14px 16px;
+      // border-radius: 12px;
+
+      // // display: flex;
+      // align-items: center;
+      // justify-content: space-between;
+
+      // /* Add these properties for text truncation */
+      // max-width: 200px; /* Adjust this value as needed */
+      // white-space: nowrap;
+      // overflow: hidden;
+      // text-overflow: ellipsis;
+
+      // /* Add this for tooltip on hover */
+      // position: relative;
+    }
+
+    .ant-upload-custom-file-name {
+      /* Base styles */
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: inline-block;
+      max-width: 150px; /* Default for smallest screens */
+
+      /* Responsive width adjustments */
+      @media (min-width: 576px) {
+        max-width: 200px; /* Small devices */
+      }
+
+      @media (min-width: 768px) {
+        max-width: 250px; /* Medium devices */
+      }
+
+      @media (min-width: 992px) {
+        max-width: 300px; /* Large devices */
+      }
+
+      @media (min-width: 1200px) {
+        max-width: 100px; /* Extra large devices */
+      }
+
+      /* Visual styling */
+      padding: 8px 12px;
+      background: $base-white-12;
+      border-radius: 8px;
+      margin-right: 8px;
+
+      /* Prevent selection */
+      user-select: none;
+    }
+
+    // .ant-upload-list-item-name {
+    //   background: $base-white-12;
+    //   padding: 14px 20px 14px 16px;
+    //   border-radius: 12px;
+
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: space-between;
+    // }
+    .ant-upload-list-item-actions.picture {
+      background: $base-white-12;
+      border-radius: 12px;
+
+      background-position: right 16px center;
+
+      .ant-btn {
+        height: 100%;
+        width: 100%;
+      }
+
+      .ant-btn-icon {
+        padding: 16px;
+
+        .anticon {
+          svg {
+            display: none;
+          }
+
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 1.2em;
+            height: 1.2em;
+            background-image: url('/images/trash.svg');
+            background-size: cover;
+            background-repeat: no-repeat;
+          }
+        }
+      }
+    }
+  }
+
+  .ant-upload-list {
+    &.ant-upload-list-item .ant-upload-list-item-actions .ant-upload-list-item-action {
+      opacity: 1;
+    }
+    &.ant-upload-list-picture .ant-upload-list-item {
+      border: none;
+    }
+  }
+}
+
+.ant-upload {
+  &.ant-upload-drag {
+    border: 2px dashed $base-white-20;
+  }
+  &.ant-upload-drag:hover {
+    border: 2px dashed $base-white-40;
+    outline: unset;
+  }
+}
+
+// New styles for error state
+.ant-upload-list-item-error {
+  .ant-upload-drag {
+    border-color: $base-error;
+  }
+
+  .ant-upload-list-item-name {
+    color: $base-error;
+    background-image: url('/images/error-icon.svg') !important;
+  }
+
+  .ant-upload-list-item-actions.picture {
+    background: rgba($base-error, 0.1);
+
+    .ant-btn-icon {
+      .anticon::before {
+        background-image: url('/images/trash-error.svg');
+      }
+    }
+  }
+}

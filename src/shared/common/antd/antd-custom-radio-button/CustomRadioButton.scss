@@ -1,0 +1,34 @@
+// // After (using @use)
+// @use '../../../../style/main.scss' as *;
+
+// .ant-radio-group {
+//   &.ant-radio-group-outline {
+//     .ant-radio-wrapper {
+//       background: $base-white-10;
+//       color: white;
+//       padding: 7px 2px 7px 10px;
+//       border-radius: 10px;
+//       .ant-radio {
+//         &.ant-radio-checked .ant-radio-inner {
+//           background-color: white;
+//           // width: 20px;
+//           // height: 20px;
+//           &::after {
+//             // width: 20px;
+//             // height: 20px;
+//             // margin-block-start: -10px;
+//             // margin-inline-start: -10px;
+//             background-color: rgba(255, 106, 26, 1);
+//             // background: url('/images/radio-selected.svg');
+//           }
+//         }
+//         .ant-radio-inner {
+//           background-color: $base-black-10;
+//           // background: linear-gradient(to right, rgba(255, 184, 33, 1), rgba(224, 46, 38, 1));
+//           color: rgba(224, 46, 38, 1);
+//           border-color: $base-white-10;
+//         }
+//       }
+//     }
+//   }
+// }

@@ -1,0 +1,35 @@
+.ant-modal {
+  &.bigModal {
+    .ant-modal-content {
+      min-height: 40em;
+    }
+  }
+
+  &.no-header-modal {
+    .ant-modal-header {
+      display: none;
+    }
+  }
+  .ant-modal-content {
+    // background-color: #3f4345;
+    border-radius: 12px;
+  }
+
+  .ant-modal-close {
+    right: 0px;
+    top: -50px;
+    width: 40px;
+    height: 40px;
+    left: 0px;
+    text-align: center;
+    margin: auto;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.12);
+    .ant-modal-close-x {
+      height: 26px;
+      width: 26px;
+      margin: auto;
+      border-radius: 20px;
+    }
+  }
+}

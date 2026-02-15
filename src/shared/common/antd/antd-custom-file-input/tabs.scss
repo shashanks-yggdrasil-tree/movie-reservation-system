@@ -1,0 +1,49 @@
+.ant-tabs-card {
+  &.ant-tabs-top {
+    font-family: 'Inter', sans-serif;
+  }
+
+  &.ant-tabs-top .ant-tabs-nav-list {
+    width: 100%;
+    display: flex;
+  }
+
+  &.ant-tabs-top .ant-tabs-tab {
+    justify-content: center;
+    flex: 1;
+  }
+
+  &.ant-tabs-top .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    font-family: 'Inter', sans-serif;
+    color: #319bfe;
+  }
+}
+
+.fullScreenModal {
+  width: 100% !important;
+  height: 100vh !important;
+}
+
+.fullScreenModal .ant-modal-content {
+  height: 100vh;
+}
+
+.fullScreenModal .ant-modal-body {
+  height: calc(100vh - 110px);
+  overflow: auto;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  display: inline-block;
+  animation: marquee 150s linear infinite;
+  color: red;
+}

@@ -1,0 +1,178 @@
+@use '../../../../style/main.scss' as *;
+
+$padding: 6px 8px;
+
+.antd-custom-table.ant-table-wrapper {
+  max-width: 100%;
+  overflow: auto;
+
+  // .ant-table-column-title {
+  //   max-width: 4rem;
+  //   white-space: nowrap;
+  //   overflow: hidden;
+  //   text-overflow: ellipsis;
+  // }
+
+  .ant-table-cell-ellipsis {
+    max-width: 24em;
+
+    &.ant-table-cell-fix-right {
+      .ant-table-cell-content {
+        overflow: visible;
+
+      }
+    }
+
+  }
+
+.ant-table-tbody > tr > td {
+  vertical-align: top !important;
+}
+  .ant-table {
+    // color: white;
+    // background: rgba(255, 255, 255, 0.16);
+    .ant-table-container {
+      // below code workds when we add height to table
+      .ant-table-header {
+        table {
+          th.ant-table-cell {
+            text-wrap: nowrap;
+            overflow: auto;
+            font-family: 'Inter', sans-serif;
+          }
+        }
+      }
+
+      .ant-table-body {
+        tr {
+          td.ant-table-cell {
+            font-family: 'Inter', sans-serif;
+          }
+        }
+      }
+      // height code ends here
+
+      // default css for non height table
+      .ant-table-content {
+        table {
+          thead.ant-table-thead {
+            tr {
+              th.ant-table-cell {
+                font-family: 'Inter', sans-serif;
+                background-color: #92bad5cc;
+
+                th {
+                  padding: 10px 10px;
+                  font-size: 14px;
+                  .ant-table-cell {
+                    font-family: 'Inter', sans-serif;
+                  }
+                }
+              }
+            }
+            tbody.ant-table-tbody {
+              tr {
+                td.ant-table-cell {
+                  font-family: 'Inter', sans-serif;
+                  font-size: 14px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .ant-table-placeholder {
+      }
+    }
+    .ant-pagination {
+      li.ant-pagination-prev {
+        button {
+        }
+      }
+      li.ant-pagination-item.ant-pagination-item-active {
+      }
+      .ant-pagination-item.ant-pagination-item-active a {
+      }
+      li.ant-pagination-item:not(.ant-pagination-item-active) {
+      }
+      .ant-pagination-item:not(.ant-pagination-item-active) a {
+      }
+
+      li.ant-pagination-next {
+        button {
+        }
+      }
+      li.ant-pagination-options {
+        div.ant-select {
+          .ant-select-selector {
+            .ant-select-selection-item {
+            }
+            .ant-select-selection-search {
+            }
+          }
+          .ant-select-arrow {
+          }
+          .ant-select-dropdown {
+          }
+        }
+      }
+    }
+  }
+
+  .antd-account-summary-table.ant-table-wrapper {
+    .ant-tag.ant-tag-has-color {
+    }
+    .ant-table {
+      .ant-table-title {
+      }
+
+      .ant-empty {
+        .ant-empty-image {
+        }
+        .ant-empty-description {
+        }
+      }
+
+      .ant-table-container {
+        // default css for non height table
+        .ant-table-content {
+          table {
+            thead.ant-table-thead {
+              tr {
+                th.ant-table-cell {
+                  font-size: 0.875rem; /* 14px */
+                  line-height: 1.25rem; /* 20px */
+                  font-weight: 500;
+                  font-family: 'Inter', sans-serif;
+                }
+              }
+            }
+            tbody.ant-table-tbody {
+              tr {
+                td.ant-table-cell {
+                  font-size: 0.75rem; /* 12px */
+                  line-height: 1rem; /* 16px */
+                  font-weight: 500;
+                  font-family: 'Inter', sans-serif;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.table-row-light {
+  background-color: #fff; /* white */
+}
+
+.table-row-dark {
+  background-color: #e6f7ff; /* light blue */
+}
+
+
+.has-data-header .ant-table-thead > tr > th {
+  background-color: #92bad5cc !important; /* light blue */
+}

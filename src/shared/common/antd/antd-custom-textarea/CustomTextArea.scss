@@ -1,0 +1,42 @@
+// After (using @use)
+@use '../../../../style/main.scss' as *;
+
+.antd-custom-textarea {
+  &.default {
+    width: 100%;
+    background: white;
+    color: black;
+    border-radius: 12px;
+    padding: 14px 16px;
+
+    &::placeholder {
+      color: $base-placeholder-color; // Adjust color as needed
+      opacity: 1; // Ensures visibility in some browsers
+    }
+
+    &.ant-input-disabled {
+      color: $base-black-60;
+
+      // &::placeholder {
+      //   color: $base-placeholder-color; // Slightly different for disabled state
+      // }
+    }
+  }
+}
+
+// // After (using @use)
+// @use '../../../../style/main.scss' as *;
+
+// .antd-custom-textarea {
+//   &.default {
+//     width: 100%;
+//     background: white;
+//     color: black;
+//     border-radius: 12px;
+//     padding: 14px 16px;
+
+//     &.ant-input-disabled {
+//       color: $base-black-60;
+//     }
+//   }
+// }
