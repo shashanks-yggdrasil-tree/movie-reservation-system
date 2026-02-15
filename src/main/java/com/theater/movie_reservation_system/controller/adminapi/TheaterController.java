@@ -1,36 +1,45 @@
-package com.theater.movie_reservation_system.controller.adminapi;
-
-import com.theater.movie_reservation_system.entity.Theater;
-import com.theater.movie_reservation_system.service.TheaterService;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
-
-@RestController
-@RequestMapping("/api/v1/theaters")
-public class TheaterController {
+	package com.theater.movie_reservation_system.controller.adminapi;
 	
-	private final TheaterService theaterService;
+	import com.theater.movie_reservation_system.dto.TheaterRequestDTO;
+	import com.theater.movie_reservation_system.dto.TheaterResponseDTO;
+	import com.theater.movie_reservation_system.entity.Theater;
+	import com.theater.movie_reservation_system.mapper.TheaterMapper;
+	import com.theater.movie_reservation_system.service.TheaterService;
+	import org.springframework.http.ResponseEntity;
+	import org.springframework.web.bind.annotation.*;
 	
-	public TheaterController(TheaterService theaterService) {
-		this.theaterService = theaterService;
-	}
+	import java.util.List;
 	
-	@PostMapping
-	public ResponseEntity<Theater> createTestTheater(
-			@RequestParam String name,
-			@RequestParam String addressLine1,
-			@RequestParam String city,
-			@RequestParam String state) {
+	@RestController
+	@RequestMapping("/api/v1/theaters")
+	public class TheaterController {
 		
-		Theater theater = new Theater(name, addressLine1, city, state);
-		Theater savedTheater = theaterService.createTheater(theater);
-		return ResponseEntity.ok(savedTheater);
+		private final TheaterService theaterService;
+		
+		
+		public TheaterController(TheaterService theaterService) {
+			this.theaterService = theaterService;
+		}
+		
+		@PostMapping
+		public ResponseEntity<Theater> createTheater(
+				@RequestBody TheaterRequestDTO requestDTO) {
+			
+			Theater theater = TheaterMapper.toEntity(requestDTO);
+			Theater savedTheater = theaterService.createTheater(theater);
+			
+			return ResponseEntity.ok(savedTheater);
+		}
+		
+		@GetMapping
+		public ResponseEntity<List<TheaterResponseDTO>> getAllTheaters() {
+			
+			List<TheaterResponseDTO> response =
+					theaterService.getAllTheaters()
+							.stream()
+							.map(TheaterMapper::toResponse)
+							.toList();
+			
+			return ResponseEntity.ok(response);
+		}
 	}
-	
-	@GetMapping
-	public ResponseEntity<List<Theater>> getAllTheaters() {
-		return ResponseEntity.ok(theaterService.getAllTheaters());
-	}
-}

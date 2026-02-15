@@ -8,7 +8,7 @@
 			import com.theater.movie_reservation_system.enums.SeatType;
 			import com.theater.movie_reservation_system.repository.*;
 			import com.theater.movie_reservation_system.service.AuditoriumSeatService;
-			import com.theater.movie_reservation_system.service.redis.SeatLockService;
+			import com.theater.movie_reservation_system.service.SeatLockService;
 			import org.springframework.http.ResponseEntity;
 			import org.springframework.web.bind.annotation.*;
 			

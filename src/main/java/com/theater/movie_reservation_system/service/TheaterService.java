@@ -1,5 +1,6 @@
 package com.theater.movie_reservation_system.service;
 
+import com.theater.movie_reservation_system.dto.TheaterResponseDTO;
 import com.theater.movie_reservation_system.entity.Theater;
 import com.theater.movie_reservation_system.repository.TheaterRepository;
 import org.springframework.stereotype.Service;

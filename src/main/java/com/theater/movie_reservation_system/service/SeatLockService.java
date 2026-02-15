@@ -1,4 +1,4 @@
-package com.theater.movie_reservation_system.service.redis;
+package com.theater.movie_reservation_system.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;

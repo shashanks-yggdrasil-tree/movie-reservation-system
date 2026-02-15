@@ -45,10 +45,13 @@ public class Reservation {
 	
 	@PrePersist
 	protected void onCreate() {
-		this.createdAt = createdAt;
+		LocalDateTime now = LocalDateTime.now();
+		this.createdAt = now;
+		
 		if (this.expiryTime == null) {
-			this.expiryTime = LocalDateTime.now().plusMinutes(10);
+			this.expiryTime = now.plusMinutes(10);
 		}
 	}
+
 	
 }

@@ -63,4 +63,16 @@ public class GlobalExceptionHandler {
 		return ResponseEntity.status(HttpStatus.CONFLICT).body(response);
 	}
 	
+	@ExceptionHandler(ReservationNotAvailableException.class)
+	public ResponseEntity<Map<String, Object>> handleReservationNotAvailableException(ReservationNotAvailableException ex) {
+		Map<String, Object> response = new HashMap<>();
+		
+		response.put("success", false);
+		response.put("message", ex.getMessage());
+		response.put("error", "RESERVATION_NOT_AVAILABLE");
+		response.put("timestamp", LocalDateTime.now());
+		
+		return ResponseEntity.status(HttpStatus.CONFLICT).body(response);
+	}
+	
 }

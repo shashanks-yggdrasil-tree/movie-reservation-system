@@ -3,7 +3,9 @@ package com.theater.movie_reservation_system.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.Formula;
 
+import java.util.List;
 import java.time.LocalDateTime;
 
 @Setter
@@ -19,7 +21,7 @@ public class Theater {
 	@Column(name = "theater_name", nullable = false, unique = true)
 	private String theaterName;
 	
-	@Column(name = "address_line_1", nullable = false)
+	@Column(name = "address_line_1",    nullable = false)
 	private String addressLine1;
 	
 	@Column(name = "address_line_2")
@@ -37,7 +39,7 @@ public class Theater {
 	@Column(unique = true)
 	private String email;
 	
-	@Column(name = "total_screens")
+	@Formula("COALESCE((SELECT COUNT(*) FROM auditoriums a WHERE a.theater_id = id), 0)")
 	private Integer totalScreens;
 	
 	@Column(name = "created_at", updatable = false)
@@ -52,7 +54,7 @@ public class Theater {
 	// All-args constructor (for completeness)
 	public Theater(String theaterName, String addressLine1, String addressLine2,
 	               String city, String state, String zipCode,
-	               String phoneNumber, String email, Integer totalScreens) {
+	               String phoneNumber, String email) {
 		this.theaterName = theaterName;
 		this.addressLine1 = addressLine1;
 		this.addressLine2 = addressLine2;
@@ -61,12 +63,11 @@ public class Theater {
 		this.zipCode = zipCode;
 		this.phoneNumber = phoneNumber;
 		this.email = email;
-		this.totalScreens = totalScreens;
 	}
 	
 	// Convenience constructor (for simple cases)
 	public Theater(String theaterName, String addressLine1, String city, String state) {
-		this(theaterName, addressLine1, null, city, state, null, null, null, null);
+		this(theaterName, addressLine1, null, city, state, null, null, null);
 	}
 	
 	// ======= Lifecycle Callbacks ========

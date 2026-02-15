@@ -1,22 +1,23 @@
-package com.theater.movie_reservation_system.service.redis;
+package com.theater.movie_reservation_system.service;
 
 import com.theater.movie_reservation_system.entity.Reservation;
 import com.theater.movie_reservation_system.entity.ReservedSeat;
 import com.theater.movie_reservation_system.entity.ShowtimeSeat;
-import com.theater.movie_reservation_system.entity.User;
 import com.theater.movie_reservation_system.enums.ReservationStatus;
 import com.theater.movie_reservation_system.enums.SeatStatus;
+import com.theater.movie_reservation_system.exception.ReservationNotAvailableException;
 import com.theater.movie_reservation_system.exception.SeatNotAvailableException;
 import com.theater.movie_reservation_system.repository.*;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
 @Transactional
-public class BookingService {
+public class ReservationService {
 	
 	private final SeatLockService seatLockService;
 	private final ReservationRepository reservationRepository;
@@ -25,12 +26,12 @@ public class BookingService {
 	private final UserRepository userRepository;
 	private final ShowTimeRepository showtimeRepository;
 	
-	public BookingService(SeatLockService seatLockService,
-	                      ReservationRepository reservationRepository,
-	                      ReservedSeatRepository reservedSeatRepository,
-	                      ShowtimeSeatRepository showtimeSeatRepository,
-	                      UserRepository userRepository,
-	                      ShowTimeRepository showtimeRepository
+	public ReservationService(SeatLockService seatLockService,
+	                          ReservationRepository reservationRepository,
+	                          ReservedSeatRepository reservedSeatRepository,
+	                          ShowtimeSeatRepository showtimeSeatRepository,
+	                          UserRepository userRepository,
+	                          ShowTimeRepository showtimeRepository
 	) {
 		this.seatLockService = seatLockService;
 		this.reservationRepository = reservationRepository;
@@ -40,6 +41,7 @@ public class BookingService {
 		this.showtimeRepository = showtimeRepository;
 	}
 	
+	@Transactional
 	public Reservation createReservation(Long userId, Long showtimeId, List<Long> showtimeSeatIds) {
 		
 		// 0. TRY TO LOCK ALL SEATS IN REDIS FIRST
@@ -72,7 +74,7 @@ public class BookingService {
 			Reservation savedReservation = reservationRepository.save(reservation);
 			
 			// 4. Update seat statuses to RESERVED and create reserved_seats records
-			for (ShowtimeSeat showtimeSeat: availableSeats) {
+			for (ShowtimeSeat showtimeSeat : availableSeats) {
 				showtimeSeat.setSeatStatus(SeatStatus.RESERVED);
 				showtimeSeatRepository.save(showtimeSeat);
 				
@@ -92,6 +94,73 @@ public class BookingService {
 			throw e;
 		}
 		
+	}
+	
+	@Transactional
+	public Reservation confirmReservation(Long reservationId, Long userId) {
+		
+		Reservation reservation = reservationRepository.findById(reservationId)
+				.orElseThrow();
+		
+		if (!reservation.getUser().getId().equals(userId)) {
+			throw new ReservationNotAvailableException("Not your reservation");
+		}
+		
+		if (reservation.getStatus() == ReservationStatus.CONFIRMED) {
+			return reservation; // idempotent
+		}
+		
+		if (reservation.getStatus() != ReservationStatus.PENDING) {
+			throw new ReservationNotAvailableException("Invalid state");
+		}
+		
+		if (reservation.getExpiryTime().isBefore(LocalDateTime.now())) {
+			throw new ReservationNotAvailableException("Reservation expired");
+		}
+		
+		List<ReservedSeat> reservedSeats =
+				reservedSeatRepository.findByReservationId(reservationId);
+		
+		if (reservedSeats.isEmpty()) {
+			throw new IllegalStateException("No seats found for reservation");
+		}
+		
+		if (!simulatePaymentProcessing(reservation)) {
+			throw new RuntimeException("Payment failed");
+		}
+		
+		reservation.setStatus(ReservationStatus.CONFIRMED);
+		
+		for (ReservedSeat rs : reservedSeats) {
+			ShowtimeSeat seat = rs.getShowtimeSeat();
+			seat.setSeatStatus(SeatStatus.BOOKED);
+			seatLockService.releaseSeat(seat.getId());
+		}
+		
+		return reservation;
+	}
+
+//	public Reservation cancelReservation() {}
+//	public Reservation refundReservation() {}
+	
+	private boolean simulatePaymentProcessing(Reservation reservation) {
+		try {
+			// Simulate payment gateway call
+			Thread.sleep(2000); // 2 second delay to mimic real payment
+			
+			// 90% success rate for simulation
+			if (Math.random() > 0.9) {
+				return false;
+			}
+			
+			// Log payment success
+			System.out.println("Payment processed for reservation: " + reservation.getId());
+			return true;
+			
+		} catch (InterruptedException e) {
+			Thread.currentThread().interrupt();
+			throw new RuntimeException("Payment simulation interrupted");
+		}
 	}
 	
 	
